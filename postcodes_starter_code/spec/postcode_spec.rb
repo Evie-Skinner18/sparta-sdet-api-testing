@@ -29,8 +29,6 @@ describe Postcodesio do
       expect(@postcodesio.get_eastings_integer).to be_a(Integer)
     end
 
-    # it "should return an ordnance survey eastings value as integer" do
-    # end
 
     it "should return a country which is one of the four constituent countries of the UK" do
       expect(@postcodesio.get_country).to eq("England").or eq("Scotland").or eq("Northern Ireland").or eq("Wales")
@@ -69,22 +67,26 @@ describe Postcodesio do
     end
 
     it "should return a lsoa string" do
+      expect(@postcodesio.get_lsoa).to be_a(String)
     end
 
     it "should return a msoa string" do
+      expect(@postcodesio.get_msoa).to be_a(String)
     end
     # admin ward and county are not documented however tested below
 
     it "should return a admin_district string" do
+      expect(@postcodesio.get_admin_district).to be_a(String)
     end
 
     it "should return a incode string of three characters" do
-    end
-
-    it "should return a msoa string" do
+      expect(@postcodesio.get_in_code).to be_a(String)
+      expect(@postcodesio.get_in_code).to eq(3)
     end
 
     it "should return a incode string of 3-4 characters" do
+      expect(@postcodesio.get_in_code).to be_a(String)
+      expect(@postcodesio.get_in_code).to be_between(3,4)
     end
   end
 
