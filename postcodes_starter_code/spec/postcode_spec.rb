@@ -6,18 +6,19 @@ describe Postcodesio do
 
     before(:all) do
       @postcodesio = Postcodesio.new
-      @response = @postcodesio.get_single_postcode('GL55BP') #input a postcode
+      @postcodesio.get_single_postcode('GL55BP') #input a postcode
     end
 
     it "should respond with a status message of 200" do
-      @response["status"]
-      expect.to return 200
+      expect(@postcodesio.get_status_code).to be 200
     end
 
     it "should have a results hash" do
+      expect(@postcodesio.single_results).to be_a(Hash)
     end
 
     it "should return a postcode between 5-7 in length"  do
+      expect(@postcodesio.get_postcode_length).to be_between(5,7)
     end
 
     it "should return an quality key integer between 1-9" do
@@ -80,12 +81,12 @@ describe Postcodesio do
 
     before(:all) do
       @postcodesio = Postcodesio.new
-      @response = @postcodesio.get_multiple_postcodes() #Add in array of postcodes
+      @response = @postcodesio.get_multiple_postcodes(['B601JA', 'SW155DU']) #Add in array of postcodes
     end
 
     it "should respond with a status message of 200" do
-      @response["status"]
-      expect.to return 200
+      # @response["status"]
+      # expect.to return 200
     end
 
     it "should return the first query as the first postcode in the response" do
