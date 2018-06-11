@@ -22,18 +22,22 @@ describe Postcodesio do
     end
 
     it "should return an quality key integer between 1-9" do
+      expect(@postcodesio.get_quality_integer).to be_between(1,9)
     end
 
     it "should return an ordnance survey eastings value as integer" do
+      expect(@postcodesio.get_eastings_integer).to be_a(Integer)
     end
 
-    it "should return an ordnance survey eastings value as integer" do
-    end
+    # it "should return an ordnance survey eastings value as integer" do
+    # end
 
     it "should return a country which is one of the four constituent countries of the UK" do
+      expect(@postcodesio.check_country).to eq("England" || "Scotland" || "Northern Ireland" || "Wales")
     end
 
     it "should return a string value for NHS authority " do
+      expect(@postcodesio.get_NHS_authority).to be_a(String)
     end
 
     it "should return a longitude float value" do
