@@ -8,4 +8,5 @@ I found most of the tests quite easy to implement, which I wasn't expecting! Thi
 ## Areas for Development
 At first I struggled with this homework but with a bit of help I got into the groove of writing the tests. I definitely want to be able to do the next homework in a fully independent way, since I am more than capable of doing this. I don't find HTTParty or data parsing that difficult to grasp, but I just want to have more practice writing the methods and the tests themselves.
 
-*I want to improve my test that checks that the postcode's country is one of the four countries in the UK.*
+- I want to attempt the second part of the homework (multiple postcodes)
+- For all the tests that want to see a string returned, is each one only there to check if the class of the object is a string?

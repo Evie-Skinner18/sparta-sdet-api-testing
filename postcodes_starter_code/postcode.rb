@@ -32,19 +32,11 @@ class Postcodesio
     @single_results["result"]["eastings"]
   end
 
-  def check_country
+  def get_country
     @single_results["result"]["country"]
-      case ["country"]
-      when ["England"]
-      when ["Scotland"]
-      when ["Northern Ireland"]
-      when ["Wales"]
-      else
-        false
-      end
+  end
 
-  end #end of check_country
-
+#Surely there's a way to make all this more DRY..?
   def get_NHS_authority
     @single_results["result"]["nhs_ha"]
   end
@@ -60,6 +52,23 @@ class Postcodesio
   def get_constituency
     @single_results["result"]["parliamentary_constituency"]
   end
+
+  def get_european_region
+    @single_results["result"]["european_electoral_region"]
+  end
+
+  def get_primary_care_trust
+    @single_results["result"]["primary_care_trust"]
+  end
+
+  def get_region
+    @single_results["result"]["region"]
+  end
+
+  def get_parish
+    @single_results["result"]["parish"]
+  end
+
 
 end #end of class
 

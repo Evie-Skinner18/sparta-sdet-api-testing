@@ -33,7 +33,7 @@ describe Postcodesio do
     # end
 
     it "should return a country which is one of the four constituent countries of the UK" do
-      expect(@postcodesio.check_country).to eq("England" || "Scotland" || "Northern Ireland" || "Wales")
+      expect(@postcodesio.get_country).to eq("England").or eq("Scotland").or eq("Northern Ireland").or eq("Wales")
     end
 
     it "should return a string value for NHS authority " do
@@ -53,15 +53,19 @@ describe Postcodesio do
     end
 
     it "should return a european_electoral_region string" do
+      expect(@postcodesio.get_european_region).to be_a(String)
     end
 
     it "should return a primary_care_trust string" do
+      expect(@postcodesio.get_primary_care_trust).to be_a(String)
     end
 
     it "should return a region string" do
+      expect(@postcodesio.get_region).to be_a(String)
     end
 
     it "should return a parish string" do
+      expect(@postcodesio.get_parish).to be_a(String)
     end
 
     it "should return a lsoa string" do
