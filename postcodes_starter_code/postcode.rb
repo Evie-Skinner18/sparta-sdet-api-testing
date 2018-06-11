@@ -49,6 +49,18 @@ class Postcodesio
     @single_results["result"]["nhs_ha"]
   end
 
+  def get_longitude
+    @single_results["result"]["longitude"]
+  end
+
+  def get_latitude
+    @single_results["result"]["latitude"]
+  end
+
+  def get_constituency
+    @single_results["result"]["parliamentary_constituency"]
+  end
+
 end #end of class
 
 single_results = Postcodesio.new
