@@ -16,7 +16,7 @@ class Postcodesio
 
 #Grabbing an array of many postcodes by parsing the data in the API through a JSON object
   def get_multiple_postcodes(postcodes_array)
-    JSON.parse(self.class.post('/postcodes', body: { "postcodes" => postcodes_array}).body)
+    @many_results = JSON.parse(self.class.post('/postcodes', body: { "postcodes" => postcodes_array}).body)
   end
 
 #Methods for one postcode
@@ -90,6 +90,10 @@ class Postcodesio
     in_code.length
   end
 
+  #Methods for many postcodes
+  def get_multiple_status
+    @many_results["result"]["status"]
+  end
 
 end #end of class
 
