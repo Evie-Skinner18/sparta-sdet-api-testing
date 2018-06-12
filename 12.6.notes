@@ -1,0 +1,12 @@
+SOM
+Once you've done it once, you can then create a template for doing it again and again. You'll have to write new mthods again but the
+design pattern is the template. The convention like in Rails there is a template for making web apps.
+
+
+Supeclass.
+Yesterday, both our services (one postcode and many postcodes) were inside one class. With SOM you create one super class and you Thenhave
+one class each for e.g single psotcode and many postocdoes; if you want you can have these classes inherit from the super class!
+So we won;t have to do an API call every time we run the tests (this will speed things up).
+
+You can use the cncept of calling methods on data in an API using a SOM when making your own
+web apps that use APIs! Cool
