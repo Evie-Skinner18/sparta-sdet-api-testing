@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../lib/generator/random_postcode_generator'
+require_relative 'random_postcode_generator'
 
 
 describe Postcodesio do
@@ -8,10 +8,8 @@ describe Postcodesio do
 
     before(:all) do
       #create an instance of the single postcode service before all the tests
-      # @single_service = Postcodesio.new.single_postcode_service
-      @random_postcode = RandomGenerator.new.generate_random_postcode
-
-      @single_service.get_single_postcode("#{@random_postcode}")
+      @single_service = Postcodesio.new
+      @single_service.generate_random_postcode
     end
 
     it "should respond with a status message of 200" do
