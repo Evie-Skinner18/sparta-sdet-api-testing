@@ -22,58 +22,71 @@ describe Postcodesio do
     end
 
     it "should return an quality key integer between 1-9" do
+      expect(@postcodesio.get_quality_integer).to be_between(1,9)
     end
 
     it "should return an ordnance survey eastings value as integer" do
+      expect(@postcodesio.get_eastings_integer).to be_a(Integer)
     end
 
-    it "should return an ordnance survey eastings value as integer" do
-    end
 
     it "should return a country which is one of the four constituent countries of the UK" do
+      expect(@postcodesio.get_country).to eq("England").or eq("Scotland").or eq("Northern Ireland").or eq("Wales")
     end
 
     it "should return a string value for NHS authority " do
+      expect(@postcodesio.get_NHS_authority).to be_a(String)
     end
 
     it "should return a longitude float value" do
+      expect(@postcodesio.get_longitude).to be_a(Float)
     end
 
     it "should return a latitude float value" do
+      expect(@postcodesio.get_latitude).to be_a(Float)
     end
 
     it "should return a parliamentary constituency string" do
+      expect(@postcodesio.get_constituency).to be_a(String)
     end
 
     it "should return a european_electoral_region string" do
+      expect(@postcodesio.get_european_region).to be_a(String)
     end
 
     it "should return a primary_care_trust string" do
+      expect(@postcodesio.get_primary_care_trust).to be_a(String)
     end
 
     it "should return a region string" do
+      expect(@postcodesio.get_region).to be_a(String)
     end
 
     it "should return a parish string" do
+      expect(@postcodesio.get_parish).to be_a(String)
     end
 
     it "should return a lsoa string" do
+      expect(@postcodesio.get_lsoa).to be_a(String)
     end
 
     it "should return a msoa string" do
+      expect(@postcodesio.get_msoa).to be_a(String)
     end
     # admin ward and county are not documented however tested below
 
     it "should return a admin_district string" do
+      expect(@postcodesio.get_admin_district).to be_a(String)
     end
 
     it "should return a incode string of three characters" do
-    end
-
-    it "should return a msoa string" do
+      # expect(@postcodesio.get_in_code).to be_a(String)
+      expect(@postcodesio.get_in_code).to eq(3)
     end
 
     it "should return a incode string of 3-4 characters" do
+      # expect(@postcodesio.get_in_code).to be_a(String)
+      expect(@postcodesio.get_in_code).to be_between(3,4)
     end
   end
 
@@ -85,8 +98,7 @@ describe Postcodesio do
     end
 
     it "should respond with a status message of 200" do
-      # @response["status"]
-      # expect.to return 200
+      expect(@response).to be(200)
     end
 
     it "should return the first query as the first postcode in the response" do
